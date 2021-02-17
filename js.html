@@ -120,6 +120,10 @@ function BlockCrash()           //블럭 충돌감지
                         {
                             ctx.clearRect(blockX, blockY, blockX+blockWidth, blockHeight);
                         }
+                        if(blockStatus.status==0)
+                        {
+
+                        }
                 }
                 if((ballY>blockY && ballY<blockY+blockHeight) && (ballX+ballRadius>blockX)&&(ballX-ballRadius<blockX+blockWidth))
                 {
@@ -314,12 +318,12 @@ if(itemX+itemWidth>myCanvas.width || itemX-itemWidth<0)     //아이템 좌, 우
 
 if((ballX+ballRadius>itemX && itemX+itemWidth>ballX-ballRadius) && (ballY+ballRadius>itemY && ballY-ballRadius<itemY+itemHeight))
 {
-   itemStatus=true;
+   itemStatus=true;     //공2 ON-1
 }
 
-if(itemStatus==true)
+if(itemStatus==true)    //공2 ON-2
 {
-    ballX2=ballX2+dx2; 
+    ballX2=ballX2+dx2;
     ballY2=ballY2+dy2; 
     drawBall2();
     BlockCrash2();
